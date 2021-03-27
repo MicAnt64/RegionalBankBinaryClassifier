@@ -1,0 +1,51 @@
+body {
+  background-color: rgb(219, 220, 206);
+}
+
+/* Navbar */
+.teal-toggler {
+  background-color: rgb(142, 180, 182) !important;
+  transition: transform 250ms;
+}
+
+.teal-toggler:hover {
+  background-color: rgb(125, 180, 184) !important;
+}
+
+a.teal-toggler-link {
+  color: rgb(194, 218, 220) !important;
+}
+
+a.teal-toggler-link.disabled {
+  color: rgb(71, 74, 77) !important;
+}
+
+a.teal-toggler-link:hover {
+  color: rgb(148, 203, 209) !important;
+  transition: color 250ms;
+}
+
+/* Splash page main body */
+
+.main-body-content {
+  margin-top: 100px;
+}
+
+@media only screen and (max-width: 768px) {
+  .main-body-content {
+    margin-top: 50px;
+  }
+
+  img.logo-body {
+    height: 5em;
+  }
+
+  p.desc-body {
+    margin: 0 10px;
+  }
+  /*
+  button.btn-apply {
+    margin-top: 20px;
+  }
+  */
+}
