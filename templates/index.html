@@ -7,17 +7,12 @@
     <title>Regional Bank</title>
 
     <link rel="stylesheet" href="../static/bootstrap-4.6.0-dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../static/css/style.css" />
     <script
       src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
       integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
       crossorigin="anonymous"
     ></script>
-
-    <style>
-      body {
-        background-color: rgb(219, 220, 206);
-      }
-    </style>
   </head>
 
   <body>
@@ -33,14 +28,13 @@
 
           <!-- Toggler -->
           <button
-            class="navbar-toggler"
+            class="navbar-toggler teal-toggler"
             type="button"
             data-toggle="collapse"
             data-target="#myNavbar"
             aria-controls="navbarSupportedContent"
             aria-expanded="false"
             aria-label="Toggle navigation"
-            style="background-color: rgb(142, 180, 182)"
           >
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -49,13 +43,13 @@
           <div class="collapse navbar-collapse justify-content-end" id="myNavbar">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item mr-4">
-                <a class="nav-link active" href="#" style="color: rgb(194, 218, 220)">Home</a>
+                <a class="nav-link teal-toggler-link" href="#">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#" style="color: rgb(194, 218, 220)">Login</a>
+                <a class="nav-link teal-toggler-link" href="#">Login</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link disabled" href="#" style="color: rgb(194, 218, 220)">Register</a>
+                <a class="nav-link teal-toggler-link disabled" href="#">Register</a>
               </li>
             </ul>
 
@@ -63,6 +57,20 @@
           </div>
         </div>
       </nav>
+    </section>
+
+    <!-- MAIN BODY-->
+    <section>
+      <div class="main-body-content text-center">
+        <h2 class="text-dark pb-3">Regional Bank</h2>
+        <img class="logo-body" src="../static/img/bankLogo.png" alt="" />
+        <p class="mt-4 desc-body">
+          We use machine learning to quickly assess an applicant's eligibility for an auto loan!
+        </p>
+      </div>
+      <div class="text-center">
+        <button type="button" class="btn btn-primary btn-lg mt-3">Apply</button>
+      </div>
     </section>
 
     <script src="../static/bootstrap-4.6.0-dist/js/bootstrap.bundle.min.js"></script>
