@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Regional Bank</title>
+
+    <link rel="stylesheet" href="../static/bootstrap-4.6.0-dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../static/css/style.css" />
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+  <body>
+    <!-- NAVBAR -->
+    <section>
+      <nav class="navbar navbar-light bg-dark navbar-expand-md">
+        <div class="container-fluid">
+          <!-- Brand -->
+          <div class="navbar-brand">
+            <img src="../static/img/bankLogo.png" width="30" height="30" class="d-inline align-top mr-2 mb-1" alt="" />
+            <h5 class="d-inline text-light">Regional Bank</h5>
+          </div>
+
+          <!-- Toggler -->
+          <button
+            class="navbar-toggler teal-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#myNavbar"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <!-- Navbar Links -->
+          <div class="collapse navbar-collapse justify-content-end" id="myNavbar">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item mr-4">
+                <a class="nav-link teal-toggler-link" href="./index.html">Home</a>
+              </li>
+            </ul>
+
+            <!-- ADD Hover on Links, add aria stuff, data target? Href?, Move Style to CSS, And show current-->
+          </div>
+        </div>
+      </nav>
+    </section>
+
+    <!-- MAIN BODY - APPLICATION-->
+    <section>
+      <div class="main-body-content-apply text-center">
+        <img class="logo-application" src="../static/img/bankLogo.png" alt="" />
+        <h6 class="text-dark pb-3">Single Applicant Form</h6>
+      </div>
+      <div class="form-cointainer" style="padding-top: 50px; padding-left: 150px; padding-right: 150px">
+        <form>
+          <div class="form-row">
+            <div class="form-group col-md-4">
+              <label for="MemberIndicator">Member</label>
+              <select id="MemberIndicator" class="form-control">
+                <option selected>Choose...</option>
+                <option>Yes</option>
+                <option>No</option>
+              </select>
+            </div>
+            <div class="form-group col-md-4">
+              <label for="RequestType">Request Type</label>
+              <select id="RequestType" class="form-control">
+                <option selected>Choose...</option>
+                <option>...</option>
+              </select>
+            </div>
+            <div class="form-group col-md-4">
+              <label for="OccupancyStatus">Occupancy Status</label>
+              <select id="OccupancyStatus" class="form-control">
+                <option selected>Choose...</option>
+                <option>...</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-4">
+              <label for="isNewVehicle">New Vehicle</label>
+              <select id="isNewVehicle" class="form-control">
+                <option selected>Choose...</option>
+                <option>...</option>
+              </select>
+            </div>
+            <div class="form-group col-md-4">
+              <label for="EmploymentStatus">Employment Status</label>
+              <select id="EmploymentStatus" class="form-control">
+                <option selected>Choose...</option>
+                <option>...</option>
+              </select>
+            </div>
+            <div class="form-group col-md-4">
+              <label for="Source">Source</label>
+              <select id="Source" class="form-control">
+                <option selected>Choose...</option>
+                <option>...</option>
+              </select>
+            </div>
+          </div>
+
+          <hr />
+          <hr />
+
+          <div class="form-row">
+            <div class="form-group col-md-3">
+              <label for="ModifiedCreditScore">Credit Score</label>
+              <input type="text" class="form-control" id="ModifiedCreditScore" />
+            </div>
+            <div class="form-group col-md-3">
+              <label for="ModifiedBankruptcyScore">Bankruptcy Score</label>
+              <input type="text" class="form-control" id="ModifiedBankruptcyScore" />
+            </div>
+            <div class="form-group col-md-3">
+              <label for="EmployedMonths">**Employed Months</label>
+              <input type="text" class="form-control" id="EmployedMonths" />
+            </div>
+            <div class="form-group col-md-3">
+              <label for="PrevEmployedMonths">**Prev. Employed Months</label>
+              <input type="text" class="form-control" id="PrevEmployedMonths" />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-3">
+              <label for="PrimeMonthlyIncome">**Monthly Income</label>
+              <input type="text" class="form-control" id="PrimeMonthlyIncome" />
+            </div>
+            <div class="form-group col-md-3">
+              <label for="PrimeMonthlyLiability">Monthly Liability</label>
+              <input type="text" class="form-control" id="PrimeMonthlyLiability" />
+            </div>
+            <div class="form-group col-md-3">
+              <label for="PrimeMonthlyRent">**Monthly Rent</label>
+              <input type="text" class="form-control" id="PrimeMonthlyRent" />
+            </div>
+            <div class="form-group col-md-3">
+              <label for="TotalMonthlyDebtBeforeLoan">Monthly Debt Before Loan</label>
+              <input type="text" class="form-control" id="TotalMonthlyDebtBeforeLoan" />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-3">
+              <label for="VehicleMileage">**Vehicle Mileage</label>
+              <input type="text" class="form-control" id="VehicleMileage" />
+            </div>
+            <div class="form-group col-md-3">
+              <label for="TotalVehicleValue">**Vehicle Value</label>
+              <input type="text" class="form-control" id="TotalVehicleValue" />
+            </div>
+            <div class="form-group col-md-3">
+              <label for="AmountRequested">**Amount Requested</label>
+              <input type="text" class="form-control" id="AmountRequested" />
+            </div>
+            <div class="form-group col-md-3">
+              <label for="DownPayment">**Down Payment</label>
+              <input type="text" class="form-control" id="DownPayment" />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-3">
+              <label for="Loanterm">**Loan Term</label>
+              <input type="text" class="form-control" id="Loanterm" />
+            </div>
+            <div class="form-group col-md-3">
+              <label for="OccupancyDuration">**Occupancy Duration</label>
+              <input type="text" class="form-control" id="OccupancyDuration" />
+            </div>
+            <div class="form-group col-md-3">
+              <label for="EstimatedMonthlyPayment">Estimated Monthly Payment</label>
+              <input type="text" class="form-control" id="EstimatedMonthlyPayment" />
+            </div>
+            <div class="form-group col-md-3">
+              <label for="NumberOfOpenRevolvingAccounts">Number Of Open Revolving Accounts</label>
+              <input type="text" class="form-control" id="NumberOfOpenRevolvingAccounts" />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-3"></div>
+            <div class="form-group col-md-3">
+              <label for="LTV">LTV</label>
+              <input type="text" class="form-control" id="LTV" />
+            </div>
+            <div class="form-group col-md-3">
+              <label for="DTV">DTV</label>
+              <input type="text" class="form-control" id="DTV" />
+            </div>
+            <div class="form-group col-md-3"></div>
+          </div>
+
+          <button type="submit" class="btn btn-primary">Sign in</button>
+        </form>
+      </div>
+      <div class="text-center">
+        <button type="button" class="btn btn-primary btn-lg mt-3">Apply</button>
+      </div>
+    </section>
+
+    <script src="../static/bootstrap-4.6.0-dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      categorical_features = [
+        'Source',
+        'EmploymentStatus',
+        'isNewVehicle',
+        'OccupancyStatus',
+        'RequestType',
+        'MemberIndicator'
+      ];
+      numerical_features = [
+        'ModifiedCreditScore',
+        'ModifiedBankruptcyScore',
+        'EmployedMonths',
+        'PrevEmployedMonths',
+        'PrimeMonthlyIncome',
+        'PrimeMonthlyLiability',
+        'PrimeMonthlyRent',
+        'TotalMonthlyDebtBeforeLoan',
+        'VehicleMileage',
+        'TotalVehicleValue',
+        'AmountRequested',
+        'DownPayment',
+        'Loanterm',
+        'OccupancyDuration',
+        'EstimatedMonthlyPayment',
+        'NumberOfOpenRevolvingAccounts',
+        'LTV',
+        'DTI'
+      ];
+      const x = categorical_features.length + numerical_features.length;
+      console.log(x); //6 , 18
+    </script>
+  </body>
+</html>

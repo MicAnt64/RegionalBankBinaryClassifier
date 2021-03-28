@@ -31,6 +31,8 @@ a.teal-toggler-link:hover {
   margin-top: 100px;
 }
 
+/* About page */
+
 .main-body-content-about {
   margin-top: 40px;
 }
@@ -41,6 +43,15 @@ img.logo-body-about {
 
 .desc-body-about {
   padding: 0 300px;
+}
+/* Application page */
+
+img.logo-application {
+  height: 3em;
+}
+
+.main-body-content-apply {
+  margin-top: 20px;
 }
 
 @media only screen and (max-width: 768px) {
