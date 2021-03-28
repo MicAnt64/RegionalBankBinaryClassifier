@@ -31,6 +31,18 @@ a.teal-toggler-link:hover {
   margin-top: 100px;
 }
 
+.main-body-content-about {
+  margin-top: 40px;
+}
+
+img.logo-body-about {
+  height: 5em;
+}
+
+.desc-body-about {
+  padding: 0 300px;
+}
+
 @media only screen and (max-width: 768px) {
   .main-body-content {
     margin-top: 50px;
