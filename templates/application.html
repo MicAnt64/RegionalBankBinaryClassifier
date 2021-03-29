@@ -7,7 +7,8 @@
     <title>Regional Bank</title>
 
     <link rel="stylesheet" href="../static/bootstrap-4.6.0-dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="../static/css/style.css" />
+    <!--<link rel="stylesheet" href="../static/css/style.css" />-->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
     <script
       src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
       integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
@@ -57,31 +58,45 @@
     <section>
       <div class="main-body-content-apply text-center">
         <img class="logo-application" src="../static/img/bankLogo.png" alt="" />
-        <h6 class="text-dark pb-3">Single Applicant Form</h6>
+        <h6 class="text-dark mt-2 pb-3">Single Applicant Form</h6>
       </div>
-      <div class="form-cointainer" style="padding-top: 50px; padding-left: 150px; padding-right: 150px">
+      <div class="form-container" style="padding-top: 50px; padding-left: 150px; padding-right: 150px">
         <form action="{{url_for('loan_approval')}}" method="POST">
           <div class="form-row">
             <div class="form-group col-md-4">
               <label for="MemberIndicator">Member</label>
               <select id="MemberIndicator" class="form-control" name="MemberIndicator">
                 <option selected>Choose...</option>
-                <option>Yes</option>
-                <option>No</option>
+                <option>Y</option>
+                <option>N</option>
               </select>
             </div>
             <div class="form-group col-md-4">
               <label for="RequestType">Request Type</label>
               <select id="RequestType" class="form-control" name="RequestType">
                 <option selected>Choose...</option>
-                <option>...</option>
+                <option>DEALER PURCHASE</option>
+                <option>INDIRECT</option>
+                <option>CAR SALE</option>
+                <option>PRIVATE PARTY</option>
+                <option>REFINANCE</option>
+                <option>TITLE LOAN</option>
+                <option>LEASE BUYOUT</option>
+                <option>A CAR SALE PREAPPROVAL</option>
+                <option>REFINANCE-PROMO</option>
+                <option>VEHICLE - CROSS SELL</option>
               </select>
             </div>
             <div class="form-group col-md-4">
               <label for="OccupancyStatus">Occupancy Status</label>
               <select id="OccupancyStatus" class="form-control" name="OccupancyStatus">
                 <option selected>Choose...</option>
-                <option>...</option>
+                <option>RENT</option>
+                <option>OWN</option>
+                <option>BUYING</option>
+                <option>GOVQUARTERS</option>
+                <option>LIVEWITHPARENTS</option>
+                <option>OTHER</option>
               </select>
             </div>
           </div>
@@ -90,21 +105,27 @@
               <label for="isNewVehicle">New Vehicle</label>
               <select id="isNewVehicle" class="form-control" name="isNewVehicle">
                 <option selected>Choose...</option>
-                <option>...</option>
+                <option>Y</option>
+                <option>N</option>
               </select>
             </div>
             <div class="form-group col-md-4">
               <label for="EmploymentStatus">Employment Status</label>
               <select id="EmploymentStatus" class="form-control" name="EmploymentStatus">
                 <option selected>Choose...</option>
-                <option>...</option>
+                <option>Employed</option>
+                <option>Retired</option>
+                <option>Unemployed</option>
+                <option>Others</option>
               </select>
             </div>
             <div class="form-group col-md-4">
               <label for="Source">Source</label>
               <select id="Source" class="form-control" name="Source">
                 <option selected>Choose...</option>
-                <option>...</option>
+                <option>CONSUMER</option>
+                <option>GATEWAY</option>
+                <option>LENDER</option>
               </select>
             </div>
           </div>
@@ -201,8 +222,8 @@
               <input type="text" class="form-control" id="LTV" name="LTV" />
             </div>
             <div class="form-group col-md-3">
-              <label for="DTV">DTV</label>
-              <input type="text" class="form-control" id="DTV" name="DTV" />
+              <label for="DTI">DTI</label>
+              <input type="text" class="form-control" id="DTI" name="DTI" />
             </div>
             <div class="form-group col-md-3"></div>
           </div>
