@@ -54,6 +54,11 @@ img.logo-application {
   margin-top: 20px;
 }
 
+/* Results Page */
+.teal-results {
+  color: rgb(12, 111, 136) !important;
+}
+
 @media only screen and (max-width: 768px) {
   .main-body-content {
     margin-top: 50px;
