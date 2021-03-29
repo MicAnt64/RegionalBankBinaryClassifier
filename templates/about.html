@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Regional Bank</title>
 
-    <link rel="stylesheet" href="../static/bootstrap-4.6.0-dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap-4.6.0-dist/css/bootstrap.min.css') }}" />
     <!--<link rel="stylesheet" href="../static/css/style.css" />-->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
     <script
@@ -71,13 +71,13 @@
           classifier amongst other classifiers. The following performance metrics are listed below:
         </p>
 
-        <ul class="mb-4" style="text-align: center; list-style-position: inside">
-          <li class="text-dark"><span>Accuracy: 87.9%</span></li>
-          <li class="text-dark">ROC-AUD: 95.2%</li>
-          <li class="text-dark">Precision (Approved): 85%</li>
-          <li class="text-dark">Precision (Declined): 90%</li>
-          <li class="text-dark">Recall (Approved): 89%</li>
-          <li class="text-dark">Recall (Declined): 87%</li>
+        <ul class="mb-4" style="text-align: center; list-style: none">
+          <li class="text-dark"><span>-- Accuracy: 87.9% --</span></li>
+          <li class="text-dark">-- ROC-AUD: 95.2% --</li>
+          <li class="text-dark">-- Precision (Approved): 85% --</li>
+          <li class="text-dark">-- Precision (Declined): 90% --</li>
+          <li class="text-dark">-- Recall (Approved): 89% --</li>
+          <li class="text-dark">-- Recall (Declined): 87% --</li>
         </ul>
       </div>
     </section>
