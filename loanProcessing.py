@@ -62,9 +62,10 @@ def loan_approval():
         form_dataFrame[field] = pd.to_numeric(form_dataFrame[field])
 
     print("Updated form: ", form_dataFrame)
-    
+    print("Prepro expected cols: ", preprocessor.get_feature_names)
     # 2) PREPROCESS DATA USING TRAINED PREPROCESSORS
     X = preprocessor.transform(form_dataFrame)
+    print("X: ", X)
     
     # 3) PASS DATA INTO GRADIENT BOOSTING MODEL
     y_pred = gradBoost.predict(X)
