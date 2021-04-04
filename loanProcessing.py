@@ -1,5 +1,4 @@
-from flask import Flask, request, jsonify, url_for, render_template # We have it
-import uuid
+import os
 from flask import Flask, request, jsonify, url_for, render_template # We have it 
 import joblib
 import pandas as pd   
