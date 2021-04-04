@@ -2,6 +2,12 @@ import os
 from flask import Flask, request, jsonify, url_for, render_template # We have it 
 import joblib
 import pandas as pd   
+#from sklearn import preprocessing
+#from sklearn.preprocessing import StandardScaler
+#from sklearn.pipeline import Pipeline
+#from sklearn.compose import ColumnTransformer
+#from feature_engine.categorical_encoders import OneHotCategoricalEncoder
+#from sklearn.ensemble import GradientBoostingClassifier
 
 preprocessor_file = 'models/preprocessor.pkl'
 preprocessor = joblib.load(os.path.join(os.getcwd(), preprocessor_file))
