@@ -77,3 +77,12 @@ img.logo-application {
   }
   */
 }
+
+@media only screen and (min-width: 1070px) {
+  .form-container {
+    padding-top: 0px;
+    padding-left: 150px;
+    padding-right: 150px;
+    margin-bottom: 50px;
+  }
+}
