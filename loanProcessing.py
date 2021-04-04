@@ -1,5 +1,6 @@
 import os
-from flask import Flask, request, jsonify, url_for, render_template # We have it 
+from flask import Flask, request, jsonify, url_for, render_template
+import numpy as np
 import joblib
 import pandas as pd   
 from sklearn import preprocessing
@@ -52,11 +53,15 @@ def apply():
 def loan_approval():
     # 1) GET DATA FROM FROM
     form_dictionary = request.form.to_dict()
+    print("Dictionary: ", form_dictionary)
     form_dataFrame = pd.DataFrame([form_dictionary])
+    print("Proc. Dict.: ", form_dataFrame)
     
     # Convert values from string to float
     for field in numerical_features:
         form_dataFrame[field] = pd.to_numeric(form_dataFrame[field])
+
+    print("Updated form: ", form_dataFrame)
     
     # 2) PREPROCESS DATA USING TRAINED PREPROCESSORS
     X = preprocessor.transform(form_dataFrame)
