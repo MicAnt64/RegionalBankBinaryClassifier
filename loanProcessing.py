@@ -1,6 +1,5 @@
 import os
 from flask import Flask, request, render_template
-#from flask import Flask, request, jsonify, url_for, render_template
 import numpy as np
 import joblib
 import pandas as pd   
@@ -97,8 +96,6 @@ def about():
 def apply():
     form = CreateApplicationForm()
     return render_template('application.html', form=form)
-    #return render_template('application.html')
-
 
 @app.route('/apply', methods=['POST'])
 def loan_approval():
@@ -114,12 +111,8 @@ def loan_approval():
         for field in numerical_features:
             form_dataFrame[field] = pd.to_numeric(form_dataFrame[field])
 
-        #app.logger.info(str(response))
-        #app.logger.info(str(jsonify(response)))
-
         # 2) PREPROCESS DATA USING TRAINED PREPROCESSORS
         X = preprocessor.transform(form_dataFrame)
-        #print("Processed data: ", X)
 
         # 3) PASS DATA INTO GRADIENT BOOSTING MODEL
         y_pred = gradBoost.predict(X)
