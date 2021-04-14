@@ -63,7 +63,19 @@
         <h6 class="text-dark mt-2 pb-1">Single Applicant Form</h6>
       </div>
       <div class="form-container">
-        <form id="msform" action="{{url_for('loan_approval')}}" method="POST">
+        {% for field, errors in form.errors.items() %}
+        <div class="alert alert-danger alert-dismissible fade show mx-4" role="alert">
+          {{ ', '.join(errors) }}
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        {% endfor %}
+        <!--
+        <form id="msform" action="url_for('loan_approval')" method="POST">
+        -->
+        <form id="msform" action="url_for('loan_approval')" method="POST" novalidate>
+          {{ form.csrf_token() }}
           <!-- Progressbar -->
           <ul id="progressbar">
             <li class="active">Loan &amp; Vehicle Details</li>
@@ -76,39 +88,60 @@
             <!--<h3 class="fs-subtitle">Tell us something more about you</h3>-->
             <div class="form-row">
               <div class="form-group col-md-6">
+                <!--
                 <label for="MemberIndicator">Member</label>
                 <select id="MemberIndicator" class="form-control" name="MemberIndicator">
                   <option selected>Choose...</option>
                   <option>Y</option>
                   <option>N</option>
                 </select>
+                -->
+                <label for="MemberIndicator">Member</label>
+                {{ form.MemberIndicator(class="form-control") }}
               </div>
+
               <div class="form-group col-md-6">
                 <label for="AmountRequested">Amount Requested</label>
+                <!--
                 <input type="text" class="form-control" id="AmountRequested" name="AmountRequested" />
+                -->
+                {{ form.AmountRequested(class="form-control")}}
               </div>
             </div>
+
             <div class="form-row">
               <div class="form-group col-md-6">
                 <label for="isNewVehicle">New Vehicle</label>
+                <!--
                 <select id="isNewVehicle" class="form-control" name="isNewVehicle">
                   <option selected>Choose...</option>
                   <option>Y</option>
                   <option>N</option>
                 </select>
+                -->
+                {{ form.isNewVehicle(class="form-control") }}
               </div>
+
               <div class="form-group col-md-6">
                 <label for="VehicleMileage">Vehicle Mileage</label>
+                <!--
                 <input type="text" class="form-control" id="VehicleMileage" name="VehicleMileage" />
+                -->
+                {{ form.VehicleMileage(class="form-control")}}
               </div>
             </div>
+
             <div class="form-row">
               <div class="form-group col-md-6">
                 <label for="TotalVehicleValue">Vehicle Value</label>
-                <input type="text" class="form-control" id="TotalVehicleValue" name="TotalVehicleValue" />
+                <!--
+                  <input type="text" class="form-control" id="TotalVehicleValue" name="TotalVehicleValue" />
+                -->
+                {{ form.TotalVehicleValue(class="form-control") }}
               </div>
               <div class="form-group col-md-6">
                 <label for="RequestType">Request Type</label>
+                <!--
                 <select id="RequestType" class="form-control" name="RequestType">
                   <option selected>Choose...</option>
                   <option>DEALER PURCHASE</option>
@@ -122,16 +155,24 @@
                   <option>REFINANCE-PROMO</option>
                   <option>VEHICLE - CROSS SELL</option>
                 </select>
+                -->
+                {{ form.RequestType(class="form-control")}}
               </div>
             </div>
             <div class="form-row">
               <div class="form-group col-md-6">
                 <label for="DownPayment">Down Payment</label>
+                <!--
                 <input type="text" class="form-control" id="DownPayment" name="DownPayment" />
+                -->
+                {{ form.DownPayment(class="form-control") }}
               </div>
               <div class="form-group col-md-6">
                 <label for="Loanterm">Loan Term (months)</label>
+                <!--
                 <input type="text" class="form-control" id="Loanterm" name="Loanterm" />
+                -->
+                {{ form.Loanterm(class="form-control") }}
               </div>
             </div>
             <!--<button type="button" name="previous" class="btn btn-previous mt-3 mb-4 previous">Previous</button>-->
@@ -145,10 +186,14 @@
             <div class="form-row">
               <div class="form-group col-md-6">
                 <label for="PrimeMonthlyIncome">Monthly Income</label>
+                <!--
                 <input type="text" class="form-control" id="PrimeMonthlyIncome" name="PrimeMonthlyIncome" />
+                -->
+                {{ form.PrimeMonthlyIncome(class="form-control") }}
               </div>
               <div class="form-group col-md-6">
                 <label for="EmploymentStatus">Employment Status</label>
+                <!--
                 <select id="EmploymentStatus" class="form-control" name="EmploymentStatus">
                   <option selected>Choose...</option>
                   <option>Employed</option>
@@ -156,21 +201,31 @@
                   <option>Unemployed</option>
                   <option>Others</option>
                 </select>
+                -->
+                {{ form.EmploymentStatus(class="form-control") }}
               </div>
             </div>
             <div class="form-row">
               <div class="form-group col-md-6">
                 <label for="EmployedMonths">Employed Months</label>
+                <!--
                 <input type="text" class="form-control" id="EmployedMonths" name="EmployedMonths" />
+                -->
+                {{ form.EmployedMonths(class="form-control") }}
               </div>
+
               <div class="form-group col-md-6">
                 <label for="PrevEmployedMonths">Prev. Employed Months</label>
+                <!--
                 <input type="text" class="form-control" id="PrevEmployedMonths" name="PrevEmployedMonths" />
+                -->
+                {{ form.PrevEmployedMonths(class="form-control") }}
               </div>
             </div>
             <div class="form-row">
               <div class="form-group col-md-6">
                 <label for="OccupancyStatus">Occupancy Status</label>
+                <!--
                 <select id="OccupancyStatus" class="form-control" name="OccupancyStatus">
                   <option selected>Choose...</option>
                   <option>RENT</option>
@@ -180,16 +235,24 @@
                   <option>LIVEWITHPARENTS</option>
                   <option>OTHER</option>
                 </select>
+                -->
+                {{ form.OccupancyStatus(class="form-control") }}
               </div>
               <div class="form-group col-md-6">
                 <label for="OccupancyDuration">Occupancy Duration (months)</label>
+                <!--
                 <input type="text" class="form-control" id="OccupancyDuration" name="OccupancyDuration" />
+                -->
+                {{ form.OccupancyDuration(class="form-control") }}
               </div>
             </div>
             <div class="form-row">
               <div class="form-group col-md-6 mx-auto">
                 <label for="PrimeMonthlyRent">Monthly Rent</label>
+                <!--
                 <input type="text" class="form-control" id="PrimeMonthlyRent" name="PrimeMonthlyRent" />
+                -->
+                {{ form.PrimeMonthlyRent(class="form-control") }}
               </div>
             </div>
             <button type="button" name="previous" class="btn btn-previous mt-3 mb-4 previous">Previous</button>
@@ -203,66 +266,96 @@
             <div class="form-row">
               <div class="form-group col-md-6">
                 <label for="ModifiedCreditScore">Credit Score</label>
+                <!---
                 <input type="text" class="form-control" id="ModifiedCreditScore" name="ModifiedCreditScore" />
+                -->
+                {{ form.ModifiedCreditScore(class="form-control") }}
               </div>
               <div class="form-group col-md-6">
                 <label for="ModifiedBankruptcyScore">Bankruptcy Score</label>
+                <!--
                 <input type="text" class="form-control" id="ModifiedBankruptcyScore" name="ModifiedBankruptcyScore" />
+                -->
+                {{ form.ModifiedBankruptcyScore(class="form-control") }}
               </div>
             </div>
             <div class="form-row">
               <div class="form-group col-md-6">
                 <label for="PrimeMonthlyLiability">Monthly Liability</label>
+                <!--
                 <input type="text" class="form-control" id="PrimeMonthlyLiability" name="PrimeMonthlyLiability" />
+                -->
+                {{ form.PrimeMonthlyLiability(class="form-control") }}
               </div>
               <div class="form-group col-md-6">
                 <label for="TotalMonthlyDebtBeforeLoan">Monthly Debt Before Loan</label>
+                <!--
                 <input
                   type="text"
                   class="form-control"
                   id="TotalMonthlyDebtBeforeLoan"
                   name="TotalMonthlyDebtBeforeLoan"
                 />
+                -->
+                {{ form.TotalMonthlyDebtBeforeLoan(class="form-control") }}
               </div>
             </div>
             <div class="form-row">
               <div class="form-group col-md-6">
                 <label for="EstimatedMonthlyPayment">Estimated Monthly Payment</label>
+                <!--
                 <input type="text" class="form-control" id="EstimatedMonthlyPayment" name="EstimatedMonthlyPayment" />
+                -->
+                {{ form.EstimatedMonthlyPayment(class="form-control") }}
               </div>
               <div class="form-group col-md-6">
                 <label for="NumberOfOpenRevolvingAccounts">Number Of Open Revolving Accounts</label>
+                <!--
                 <input
                   type="text"
                   class="form-control"
                   id="NumberOfOpenRevolvingAccounts"
                   name="NumberOfOpenRevolvingAccounts"
                 />
+                -->
+                {{ form.NumberOfOpenRevolvingAccounts(class="form-control") }}
               </div>
             </div>
             <div class="form-row">
               <div class="form-group col-md-6">
-                <label for="LTV">LTV</label>
+                <label for="LTV">Loan to Vehicle Value Ratio</label>
+                <!--
                 <input type="text" class="form-control" id="LTV" name="LTV" />
+                -->
+                {{ form.LTV(class="form-control") }}
               </div>
               <div class="form-group col-md-6">
-                <label for="DTI">DTI</label>
+                <label for="DTI">Debt to Income Ration</label>
+                <!--
                 <input type="text" class="form-control" id="DTI" name="DTI" />
+                -->
+                {{ form.DTI(class="form-control") }}
               </div>
             </div>
             <div class="form-row">
               <div class="form-group col-md-6 mx-auto">
                 <label for="Source">Source</label>
+                <!--
                 <select id="Source" class="form-control" name="Source">
                   <option selected>Choose...</option>
                   <option>CONSUMER</option>
                   <option>GATEWAY</option>
                   <option>LENDER</option>
                 </select>
+                -->
+                {{ form.Source(class="form-control") }}
               </div>
             </div>
             <button type="button" name="previous" class="btn btn-previous mt-3 mb-4 previous">Previous</button>
+            <!--
             <button type="submit" class="btn btn-next mt-3 mb-4">Submit</button>
+            -->
+            {{ form.submit(class="btn btn-next mt-3 mb-4")}}
           </fieldset>
         </form>
       </div>

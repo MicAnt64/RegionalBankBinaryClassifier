@@ -1,7 +1,9 @@
+Flask_WTF==0.14.3
+numpy==1.19.2
 Flask==1.1.2
 joblib==1.0.1
-numpy>=1.19
 pandas
-scikit_learn==0.23.2
+WTForms==2.3.3
 feature_engine==0.6.1
+scikit_learn==0.23.2
 gunicorn>=19.9.0
