@@ -82,7 +82,6 @@ class CreateApplicationForm(FlaskForm):
     submit = SubmitField(label=('Submit'))
 
 app = Flask(__name__)
-print(os.environ['SECRET'])
 app.config['SECRET_KEY']= os.environ['SECRET']
 
 @app.route('/')
