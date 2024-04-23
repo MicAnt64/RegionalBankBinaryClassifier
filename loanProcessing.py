@@ -7,7 +7,7 @@ from sklearn import preprocessing
 from sklearn.preprocessing import StandardScaler
 from sklearn.pipeline import Pipeline
 from sklearn.compose import ColumnTransformer
-from feature_engine.categorical_encoders import OneHotCategoricalEncoder
+from feature_engine.encoding import OneHotEncoder as OneHotCategoricalEncoder
 from sklearn.ensemble import GradientBoostingClassifier
 from flask_wtf import FlaskForm
 from wtforms import SubmitField, SelectField, DecimalField, IntegerField
@@ -82,7 +82,7 @@ class CreateApplicationForm(FlaskForm):
     submit = SubmitField(label=('Submit'))
 
 app = Flask(__name__)
-app.config['SECRET_KEY']= os.environ['SECRET']
+app.config['SECRET_KEY'] = os.environ['SECRET']
 
 @app.route('/')
 def index():
